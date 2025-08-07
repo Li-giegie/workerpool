@@ -1,4 +1,4 @@
-# workerpool 一个灵活高效的 Go 任务调度池
+# workerpool
 
 workerpool 一个灵活高效的 Go 任务调度池
 
