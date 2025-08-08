@@ -104,6 +104,7 @@ func (w *workerPool) PushTask(t Task) error {
 		w.taskQueue <- t
 	} else {
 		if w.numWaitQueue >= 0 && len(w.waitQueue) >= w.numWaitQueue {
+			w.lock.Unlock()
 			return ErrOverflow
 		}
 		w.waitQueue = append(w.waitQueue, t)
